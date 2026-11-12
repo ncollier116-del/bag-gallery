@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background:linear-gradient(to bottom, black 35%, rgb(33, 21, 102) 100%);
+}
+
+img{
+    border-radius: 40px;
+    padding: 10px;
+    margin: 10px;
+    display: block;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 2px 10px rgba(15, 14, 39, 0.75);
+}
+h1{
+    color: rgb(33, 21, 102);
+    font-size: 3rem;
+    text-align: center;
+    margin-top: 20px;
+}
+h2{
+    color: rgb(216, 92, 70);
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 15px;
+}
+p{
+    color: rgb(216, 92, 70);
+    font-size: .8rem;
+    text-align: left;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+summary{
+    color: #6e8021;
+    font-size: 1.2rem;
+    text-align: left;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* commands the title image to display in the header section */
+.Header{
+
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    background: url("../flex-imgs/bag_titlecard.JPG") no-repeat center 38%/cover;
+    
+}
+
+/* commands the specific location of the title and subtitle text in the header section */
+.Header h1{
+
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    /*
+
+    this is the original code for the title and subtitle text in the header section, but it was commented out because it was not working properly. The text was not displaying in the correct location overlapping with the image in the header section making it unledgible when scaled, causing problems with the usability of the design.  
+
+
+    position: absolute;
+    bottom: 80%;
+    left: 8%;
+    */
+   
+    font-size: 10vw;
+    text-align: left;
+    margin: 10vh auto;
+    text-shadow: 0 2px 8px rgba(15, 14, 39, 0.75);
+}
+.Header h2{
+
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 83%;
+    max-width: 58rem;
+    margin: 20vh auto;
+    font-size: clamp(0.95rem, 2.2vw, 4rem);
+    line-height: 1.25;
+    text-shadow: 0 2px 8px rgba(15, 14, 39, 0.75);
+    overflow-wrap: anywhere;
+}
+
+/*  these stylings wearnt working properly so I commented them out and placed the subtitle text in the center of the header section. 
+
+simpler is infact better in this case!!
+ALLOWED ME TO FIND A BETTER SOLUTION FOR THE DESIGN OF THE HEADER SECTION. CLAMP 
+
+     display: flex;
+    flex-direction: row;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    margin-top: 20vw;
+    font-size: 2.2vw;
+
+    max-width: 78vw;  
+    overflow-wrap: break-word;   
+    margin-left: 10vw;
+
+
+    text-align: left;
+
+    */
+
+.footer{
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    background: #d35705;
+
+
+}
+.footer p{
+    color: #526b23;
+    font-size: 1.2vw;
+    text-align: left;
+    padding: 20px;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 16px;
+    margin: 20px 0;
+    padding: 20vw, 10vw, 20vw, 10vw;
+}
+.column{
+    flex: 1 1 calc(25% - 12px);
+    min-width: 0;
+    padding: 12px;
+    text-align: center;
+}
+/* media query - responsive layout for tablet */
+@media (max-width: 900px){
+    .column{
+        flex-basis: calc(50% - 8px);
+    }
+}
+/* media query - responsive layout for mobile */
+@media (max-width: 600px){
+    .column{
+        flex-basis: 100%;
+    }
+}
